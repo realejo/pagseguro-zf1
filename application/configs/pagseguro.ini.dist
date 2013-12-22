@@ -1,0 +1,17 @@
+[production]
+pagseguro.credentials.email = "email"
+pagseguro.credentials.token = "TOKEN"
+
+;UTF-8, ISO-8859-1
+pagseguro.charset = "UTF-8"; 
+
+pagseguro.log.active = 1;
+pagseguro.log.path = APPLICATION_DATA "/logs/pagseguro"
+
+
+[development : production]
+
+
+[testing : development]
+
+
