@@ -1,0 +1,22 @@
+{
+    "name": "realejo/pagseguro-zf1",
+    "description": "Biblioteca para usar o PagSeguro no padrão ZF1",
+    "license": "Apache-2.0",
+    "type": "library",
+    "keywords": [
+        "framework",
+        "zendframework",
+        "realejo",
+		"pagseguro"
+    ],
+    "homepage": "http://realejo.com.br",
+    "require": {
+        "php": ">=5.3",
+        "zendframework/zendframework1": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Pagseguro": "library/"
+        }
+    }
+}

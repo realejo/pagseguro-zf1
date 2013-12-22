@@ -1,9 +1,5 @@
 <?php
 
-//require_once 'library\Pagseguro\Resource.php';
-
-//require_once 'PHPUnit\Framework\TestCase.php';
-
 /**
  * Pagseguro_Resource test case.
  */
@@ -21,11 +17,23 @@ class Pagseguro_ResourceTest extends PHPUnit_Framework_TestCase
      */
     public function testGetWebserviceUrl()
     {
-        // TODO Auto-generated Pagseguro_ResourceTest::testGetWebserviceUrl()
-        $this->markTestIncomplete("getWebserviceUrl test not implemented");
+        $this->assertStringMatchesFormat(Pagseguro_Resource::WEBSERVICE_URL_DEVELOPMENT, Pagseguro_Resource::getWebserviceUrl('development'));
+        $this->assertStringMatchesFormat(Pagseguro_Resource::WEBSERVICE_URL_DEVELOPMENT, Pagseguro_Resource::getWebserviceUrl('invalid'));
+        $this->assertStringMatchesFormat(Pagseguro_Resource::WEBSERVICE_URL_PRODUCTION, Pagseguro_Resource::getWebserviceUrl('production'));
 
-        Pagseguro_Resource::getWebserviceUrl(/* parameters */);
+        // Não definido irá retornar o padrão do $env = testing
+        $this->assertStringMatchesFormat(Pagseguro_Resource::WEBSERVICE_URL_DEVELOPMENT, Pagseguro_Resource::getWebserviceUrl('testing'));
+        $this->assertStringMatchesFormat(Pagseguro_Resource::WEBSERVICE_URL_DEVELOPMENT, Pagseguro_Resource::getWebserviceUrl());
+    }
 
+    /**
+     * Tests Pagseguro_Resource::getResourceUrl()
+     *
+     * @expectedException Exception
+     */
+    public function testGetResourceUrlException()
+    {
+        Pagseguro_Resource::getResourceUrl('invalid');
     }
 
     /**
@@ -33,11 +41,15 @@ class Pagseguro_ResourceTest extends PHPUnit_Framework_TestCase
      */
     public function testGetResourceUrl()
     {
-        // TODO Auto-generated Pagseguro_ResourceTest::testGetResourceUrl()
-        $this->markTestIncomplete("getResourceUrl test not implemented");
 
-        Pagseguro_Resource::getResourceUrl(/* parameters */);
+        $this->assertStringMatchesFormat(Pagseguro_Resource::getWebserviceUrl() . Pagseguro_Resource::PAYMENT_URL_PATH, Pagseguro_Resource::getResourceUrl('payment'));
+        $this->assertStringMatchesFormat(Pagseguro_Resource::getWebserviceUrl() . Pagseguro_Resource::PAYMENT_URL_PATH, Pagseguro_Resource::getResourceUrl(Pagseguro_Resource::PAYMENT));
 
+        $this->assertStringMatchesFormat(Pagseguro_Resource::getWebserviceUrl() . Pagseguro_Resource::NOTIFICATION_URL_PATH, Pagseguro_Resource::getResourceUrl('notification'));
+        $this->assertStringMatchesFormat(Pagseguro_Resource::getWebserviceUrl() . Pagseguro_Resource::NOTIFICATION_URL_PATH, Pagseguro_Resource::getResourceUrl(Pagseguro_Resource::NOTIFICATION));
+
+        $this->assertStringMatchesFormat(Pagseguro_Resource::getWebserviceUrl() . Pagseguro_Resource::TRANSACTION_URL_PATH, Pagseguro_Resource::getResourceUrl('transaction'));
+        $this->assertStringMatchesFormat(Pagseguro_Resource::getWebserviceUrl() . Pagseguro_Resource::TRANSACTION_URL_PATH, Pagseguro_Resource::getResourceUrl(Pagseguro_Resource::TRANSACTION));
     }
 
     /**
@@ -45,12 +57,9 @@ class Pagseguro_ResourceTest extends PHPUnit_Framework_TestCase
      */
     public function testGetCheckoutUrl()
     {
-        // TODO Auto-generated Pagseguro_ResourceTest::testGetCheckoutUrl()
-        $this->markTestIncomplete("getCheckoutUrl test not implemented");
-
-        Pagseguro_Resource::getCheckoutUrl(/* parameters */);
-
+        $this->assertStringMatchesFormat(Pagseguro_Resource::PAYMENT_URL_CHECKOUT, Pagseguro_Resource::getCheckoutUrl());
     }
 
 }
+
 

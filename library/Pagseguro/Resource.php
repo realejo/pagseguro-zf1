@@ -23,7 +23,7 @@ class Pagseguro_Resource
             $env = APPLICATION_ENV;
         }
 
-        return ($env === 'production') ? WEBSERVICE_URL_PRODUCTION : WEBSERVICE_URL_DEVELOPMENT;
+        return ($env === 'production') ? self::WEBSERVICE_URL_PRODUCTION : self::WEBSERVICE_URL_DEVELOPMENT;
     }
 
     static public function getResourceUrl($service)

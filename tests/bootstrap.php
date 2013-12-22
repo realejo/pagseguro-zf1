@@ -14,7 +14,6 @@ defined('APPLICATION_PATH')
 // Define application environment
 define('APPLICATION_ENV', 'testing');
 
-
 error_reporting(E_ALL | E_STRICT);
 
 set_include_path(__DIR__ . '/library' . PATH_SEPARATOR .
@@ -23,7 +22,8 @@ set_include_path(__DIR__ . '/library' . PATH_SEPARATOR .
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-/* Zend_Loader_Autoloader::getInstance();
+/*
+Zend_Loader_Autoloader::getInstance();
 
 $locale = new Zend_Locale('pt_BR');
 Zend_Locale_Format::setOptions(array('precision'=>2));
