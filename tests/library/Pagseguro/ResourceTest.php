@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2013 Realejo (http://realejo.comb.r)
  * @license   Apache 2.0
  */
-class Pagseguro_ResourceTest extends PHPUnit_Framework_TestCase
+class ResourceTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Tests Pagseguro_Resource::getWebserviceUrl()
