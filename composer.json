@@ -11,7 +11,7 @@
     ],
     "homepage": "http://realejo.com.br",
     "require": {
-        "php": ">=5.3",
+        "php": ">=5.3.4",
         "zendframework/zendframework1": "*"
     },
     "autoload": {
