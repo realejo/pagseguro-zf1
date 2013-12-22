@@ -1,17 +1,13 @@
 <?php
-
 /**
- * Pagseguro_Resource test case.
+ * Realejo/PagSeguro (http://realejo.com.br/)
+ *
+ * @link      http://github.com/realejo/pagseguro-zf1
+ * @copyright Copyright (c) 2013 Realejo (http://realejo.comb.r)
+ * @license   Apache 2.0
  */
 class Pagseguro_ResourceTest extends PHPUnit_Framework_TestCase
 {
-
-    /**
-     *
-     * @var Pagseguro_Resource
-     */
-    private $Pagseguro_Resource;
-
     /**
      * Tests Pagseguro_Resource::getWebserviceUrl()
      */
@@ -59,7 +55,4 @@ class Pagseguro_ResourceTest extends PHPUnit_Framework_TestCase
     {
         $this->assertStringMatchesFormat(Pagseguro_Resource::PAYMENT_URL_CHECKOUT, Pagseguro_Resource::getCheckoutUrl());
     }
-
 }
-
-

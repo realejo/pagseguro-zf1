@@ -1,4 +1,11 @@
 <?php
+/**
+ * Realejo/PagSeguro (http://realejo.com.br/)
+ *
+ * @link      http://github.com/realejo/pagseguro-zf1
+ * @copyright Copyright (c) 2013 Realejo (http://realejo.comb.r)
+ * @license   Apache 2.0
+ */
 class Pagseguro_Resource
 {
     CONST WEBSERVICE_URL_PRODUCTION  = 'https://ws.pagseguro.uol.com.br';

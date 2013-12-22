@@ -2,10 +2,11 @@
 /**
  * Bootstrap para os testes do PHPUnit
  *
- * @category   UnitTests
- * @author     Realejo
- * @version    $Id: bootstrap.php 51 2013-07-05 21:09:29Z rodrigo $
- * @copyright  Copyright (c) 2011-2012 Realejo Design Ltda. (http://www.realejo.com.br)
+ * Realejo/PagSeguro (http://realejo.com.br/)
+ *
+ * @link      http://github.com/realejo/pagseguro-zf1
+ * @copyright Copyright (c) 2013 Realejo (http://realejo.comb.r)
+ * @license   Apache 2.0
  */
 // Define path to application directory
 defined('APPLICATION_PATH')
@@ -21,12 +22,3 @@ set_include_path(__DIR__ . '/library' . PATH_SEPARATOR .
         get_include_path());
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
-/*
-Zend_Loader_Autoloader::getInstance();
-
-$locale = new Zend_Locale('pt_BR');
-Zend_Locale_Format::setOptions(array('precision'=>2));
-Zend_Registry::set('Zend_Locale', $locale);
-date_default_timezone_set("America/Sao_Paulo");
- */
